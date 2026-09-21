@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magang Hub Divisi Teknisi Survei Pemetaan</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af', // Blue 800
+                        secondary: '#3b82f6', // Blue 500
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-primary flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot"></i> Hub Divisi TSP
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-gray-600 hover:text-primary transition">Beranda</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-primary transition">Tentang Kami</a>
+                    <a href="#program" class="text-gray-600 hover:text-primary transition">Program Kerja</a>
+                    <a href="#anggota" class="text-gray-600 hover:text-primary transition">Anggota</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beranda" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Beranda</a>
+                <a href="#tentang" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Tentang Kami</a>
+                <a href="#program" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Program Kerja</a>
+                <a href="#anggota" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Anggota</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-gradient-to-br from-primary to-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Anggota Magang Hub Divisi Teknisi Survei Pemetaan</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Membangun pengalaman, mengembangkan keterampilan, dan berkontribusi dalam pemetaan serta survei lapangan secara profesional.
+            </p>
+            <a href="#tentang" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg inline-block">
+                Pelajari Lebih Lanjut
+            </a>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">Tentang Kami</h2>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Survei Pemetaan" class="rounded-lg shadow-md">
+                </div>
+                <div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Kami adalah tim magang di Hub Divisi Teknisi Survei Pemetaan yang berdedikasi tinggi untuk mempelajari dan mengaplikasikan teknik survei modern. Program magang ini dirancang untuk menjembatani teori akademik dengan praktik nyata di lapangan.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Dalam kegiatan sehari-hari, kami belajar mengenai penggunaan alat-alat survei terkini, analisis data spasial, hingga pembuatan peta digital yang akurat untuk mendukung berbagai proyek pembangunan dan perencanaan.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-secondary"></i> Profesionalisme & Integritas</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-secondary"></i> Inovasi Teknologi Pemetaan</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-secondary"></i> Kerja Sama Tim</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Kerja -->
+    <section id="program" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">Program Kerja</h2>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600">Beberapa fokus utama kegiatan yang kami jalankan selama magang.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-satellite-dish"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Pelatihan Survei Lapangan</h3>
+                    <p class="text-gray-600 text-sm">
+                        Mempelajari teknik pengambilan data langsung di lapangan menggunakan alat ukur seperti Theodolite, Total Station, dan GPS Geodetik.
+                    </p>
+                </div>
+                <!-- Program 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Pengolahan Data GIS</h3>
+                    <p class="text-gray-600 text-sm">
+                        Praktik pengolahan data spasial menggunakan perangkat lunak Sistem Informasi Geografis (GIS) untuk menghasilkan peta digital.
+                    </p>
+                </div>
+                <!-- Program 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-map"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Proyek Pemetaan Tematik</h3>
+                    <p class="text-gray-600 text-sm">
+                        Pembuatan peta tematik berdasarkan kebutuhan proyek spesifik, mencakup topografi, tata guna lahan, dan utilitas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Susunan Anggota Magang -->
+    <section id="anggota" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">Susunan Anggota Magang</h2>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                <!-- Anggota 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
+                    <img src="images/anggota1.jpg" alt="Linda Nurmaldita" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
+                    <h3 class="text-lg font-bold text-gray-800">Linda Nurmaldita</h3>
+                    <p class="text-secondary text-sm mb-3">Anggota Magang</p>
+                </div>
+                <!-- Anggota 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
+                    <img src="images/anggota2.jpg" alt="Dimas Yudhistira" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
+                    <h3 class="text-lg font-bold text-gray-800">Dimas Yudhistira</h3>
+                    <p class="text-secondary text-sm mb-3">Anggota Magang</p>
+                </div>
+                <!-- Anggota 3 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
+                    <img src="images/anggota3.jpg" alt="Sahidun Anwar" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
+                    <h3 class="text-lg font-bold text-gray-800">Sahidun Anwar</h3>
+                    <p class="text-secondary text-sm mb-3">Anggota Magang</p>
+                </div>
+                <!-- Anggota 4 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
+                    <img src="images/anggota4.jpg" alt="Woelandari" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
+                    <h3 class="text-lg font-bold text-gray-800">Woelandari</h3>
+                    <p class="text-secondary text-sm mb-3">Anggota Magang</p>
+                </div>
+                <!-- Anggota 5 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
+                    <img src="images/anggota5.jpg" alt="Sri Mulyati" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
+                    <h3 class="text-lg font-bold text-gray-800">Sri Mulyati</h3>
+                    <p class="text-secondary text-sm mb-3">Anggota Magang</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-map-location-dot"></i> Hub Divisi TSP
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Wadah berkumpul dan belajar bagi para anggota magang Hub Divisi Teknisi Survei Pemetaan.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Tautan Cepat</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                    <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="#program" class="hover:text-white transition">Program Kerja</a></li>
+                    <li><a href="#anggota" class="hover:text-white transition">Anggota</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Kontak</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope"></i> magang.tsp@example.com</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> +62 812 3456 7890</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Jl. Pemetaan No. 123, Kota Data</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            &copy; 2026 Anggota Magang Hub Divisi Teknisi Survei Pemetaan. Dibuat dengan antusiasme.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
