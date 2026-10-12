@@ -58,16 +58,29 @@ function renderMembers() {
         const list = document.getElementById(div === 'survei' ? 'survei-list' : 'admin-list');
         list.innerHTML = '';
         (data.members[div] || []).forEach(m => {
+            const berkasCount = (m.berkas || []).length;
             list.innerHTML += `
             <div class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:bg-gray-50 transition">
                 <img src="../images/${m.photo}" alt="${m.name}"
                     class="w-14 h-14 rounded-full object-cover border-2 border-gray-200"
                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=1e40af&color=fff'">
-                <div class="flex-1">
+                <div class="flex-1 min-w-0">
                     <p class="font-semibold text-gray-800">${m.name}</p>
-                    <p class="text-sm text-gray-500">${m.role}</p>
+                    <p class="text-xs text-gray-500 mb-1">${m.role}</p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="inline-flex items-center gap-1 bg-blue-50 text-primary text-xs px-2 py-0.5 rounded-full font-semibold">
+                            <i class="fa-solid fa-folder"></i> ${berkasCount} Berkas
+                        </span>
+                        <span class="inline-flex items-center gap-1 bg-red-50 text-red-500 text-xs px-2 py-0.5 rounded-full font-semibold">
+                            <i class="fa-solid fa-calendar-xmark"></i> ${m.absen || 0} Absen
+                        </span>
+                    </div>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 shrink-0">
+                    ${div === 'survei' ? `<button onclick="openBerkasModal(${m.id})"
+                        class="p-2 text-green-600 hover:bg-green-50 rounded-lg transition" title="Kelola Berkas & Absen">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </button>` : ''}
                     <button onclick="editMember(${m.id}, '${div}')"
                         class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition" title="Edit">
                         <i class="fa-solid fa-pen-to-square"></i>
@@ -324,6 +337,84 @@ function showToast(msg) {
     document.getElementById('toast-msg').textContent = msg;
     toast.classList.remove('hidden');
     setTimeout(() => toast.classList.add('hidden'), 3000);
+}
+
+// ---- BERKAS & ABSEN ----
+let editingBerkasMemberId = null;
+let tempBerkasList = [];
+
+function openBerkasModal(id) {
+    const data = getData();
+    const m = data.members.survei.find(x => x.id === id);
+    if (!m) return;
+    editingBerkasMemberId = id;
+    tempBerkasList = [...(m.berkas || [])];
+    document.getElementById('berkas-member-name').textContent = m.name;
+    document.getElementById('berkas-absen').value = m.absen || 0;
+    document.getElementById('new-berkas-input').value = '';
+    renderBerkasItems();
+    document.getElementById('berkas-modal').classList.remove('hidden');
+}
+
+function renderBerkasItems() {
+    const container = document.getElementById('berkas-items');
+    container.innerHTML = '';
+    if (tempBerkasList.length === 0) {
+        container.innerHTML = '<p class="text-gray-400 text-sm text-center py-3">Belum ada berkas</p>';
+        return;
+    }
+    tempBerkasList.forEach((b, i) => {
+        container.innerHTML += `
+        <div class="flex items-center gap-3 p-2.5 bg-gray-50 rounded-lg border border-gray-100">
+            <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">${i + 1}</span>
+            <span class="font-mono text-sm text-gray-800 font-semibold flex-1">${b}</span>
+            <button onclick="removeBerkas(${i})" class="text-red-400 hover:text-red-600 transition ml-auto">
+                <i class="fa-solid fa-trash text-xs"></i>
+            </button>
+        </div>`;
+    });
+}
+
+function addBerkas() {
+    const input = document.getElementById('new-berkas-input');
+    const val = input.value.trim().toUpperCase();
+    if (!val) return;
+    if (tempBerkasList.includes(val)) {
+        alert('Berkas sudah ada dalam daftar!');
+        return;
+    }
+    tempBerkasList.push(val);
+    input.value = '';
+    renderBerkasItems();
+}
+
+function removeBerkas(index) {
+    tempBerkasList.splice(index, 1);
+    renderBerkasItems();
+}
+
+function changeAbsen(delta) {
+    const input = document.getElementById('berkas-absen');
+    const val = Math.max(0, parseInt(input.value || 0) + delta);
+    input.value = val;
+}
+
+function saveBerkas() {
+    const data = getData();
+    const idx = data.members.survei.findIndex(x => x.id === editingBerkasMemberId);
+    if (idx === -1) return;
+    data.members.survei[idx].berkas = [...tempBerkasList];
+    data.members.survei[idx].absen = parseInt(document.getElementById('berkas-absen').value) || 0;
+    saveData(data);
+    closeBerkasModal();
+    renderMembers();
+    showToast('Berkas & absen berhasil disimpan!');
+}
+
+function closeBerkasModal() {
+    document.getElementById('berkas-modal').classList.add('hidden');
+    editingBerkasMemberId = null;
+    tempBerkasList = [];
 }
 
 // ---- INIT ----

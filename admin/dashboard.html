@@ -303,6 +303,53 @@
         </div>
     </div>
 
+    <!-- ===== MODAL BERKAS & ABSEN ===== -->
+    <div id="berkas-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-5">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800">Kelola Berkas & Absen</h3>
+                    <p class="text-sm text-gray-500" id="berkas-member-name"></p>
+                </div>
+                <button onclick="closeBerkasModal()" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+
+            <!-- Absen -->
+            <div class="bg-red-50 border border-red-100 rounded-xl p-4 mb-5">
+                <label class="block text-sm font-bold text-red-700 mb-2"><i class="fa-solid fa-calendar-xmark mr-1"></i> Jumlah Absen</label>
+                <div class="flex items-center gap-3">
+                    <button onclick="changeAbsen(-1)" class="w-9 h-9 rounded-full border-2 border-red-300 text-red-600 font-bold hover:bg-red-100 transition text-lg leading-none">−</button>
+                    <input type="number" id="berkas-absen" min="0" value="0"
+                        class="w-20 text-center text-2xl font-bold border-2 border-red-200 rounded-xl py-1 focus:outline-none focus:border-red-400">
+                    <button onclick="changeAbsen(1)" class="w-9 h-9 rounded-full border-2 border-red-300 text-red-600 font-bold hover:bg-red-100 transition text-lg leading-none">+</button>
+                </div>
+            </div>
+
+            <!-- Daftar Berkas -->
+            <div class="mb-4">
+                <label class="block text-sm font-bold text-gray-700 mb-2"><i class="fa-solid fa-folder-open mr-1 text-primary"></i> Daftar Berkas Selesai</label>
+                <div id="berkas-items" class="space-y-2 mb-3 max-h-48 overflow-y-auto pr-1"></div>
+
+                <!-- Tambah berkas baru -->
+                <div class="flex gap-2">
+                    <input type="text" id="new-berkas-input" placeholder="Contoh: SU_421_2013"
+                        class="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary font-mono"
+                        onkeydown="if(event.key==='Enter'){event.preventDefault();addBerkas();}">
+                    <button onclick="addBerkas()" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-900 transition">
+                        <i class="fa-solid fa-plus"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex gap-3 pt-2 border-t">
+                <button onclick="saveBerkas()" class="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition text-sm">
+                    <i class="fa-solid fa-floppy-disk mr-2"></i> Simpan
+                </button>
+                <button onclick="closeBerkasModal()" class="flex-1 bg-gray-100 text-gray-600 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-sm">Batal</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="hidden fixed bottom-6 right-6 bg-gray-900 text-white px-5 py-3 rounded-xl text-sm flex items-center gap-2 z-50 shadow-lg">
         <i class="fa-solid fa-circle-check text-green-400"></i>

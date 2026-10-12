@@ -5,17 +5,17 @@
 const DEFAULT_DATA = {
     members: {
         survei: [
-            { id: 1, name: 'Linda Nurmaldita', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota1.jpg' },
-            { id: 2, name: 'Dimas Yudhistira', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota2.jpg' },
-            { id: 3, name: 'Sahidun Anwar', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota3.jpg' },
-            { id: 4, name: 'Woelandari', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota4.jpg' },
-            { id: 5, name: 'Sri Mulyati', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota5.jpg' },
+            { id: 1, name: 'Linda Nurmaldita', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota1.jpg', absen: 0, berkas: [] },
+            { id: 2, name: 'Dimas Yudhistira', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota2.jpg', absen: 0, berkas: ['SU_421_2013','SU_423_2013','SU_433_2008','SU_498_2008'] },
+            { id: 3, name: 'Sahidun Anwar', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota3.jpg', absen: 0, berkas: [] },
+            { id: 4, name: 'Woelandari', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota4.jpg', absen: 0, berkas: [] },
+            { id: 5, name: 'Sri Mulyati', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota5.jpg', absen: 0, berkas: [] },
         ],
         administrasi: [
-            { id: 6, name: 'Novia Eliza', role: 'Tenaga Administrasi & Yuridis', photo: 'admin1.jpg' },
-            { id: 7, name: 'Rayhan Arasy', role: 'Tenaga Administrasi & Yuridis', photo: 'admin2.jpg' },
-            { id: 8, name: 'Amir Aditia', role: 'Tenaga Administrasi & Yuridis', photo: 'admin3.jpg' },
-            { id: 9, name: 'Dian Diana', role: 'Tenaga Administrasi & Yuridis', photo: 'admin4.jpg' },
+            { id: 6, name: 'Novia Eliza', role: 'Tenaga Administrasi & Yuridis', photo: 'admin1.jpg', absen: 0, berkas: [] },
+            { id: 7, name: 'Rayhan Arasy', role: 'Tenaga Administrasi & Yuridis', photo: 'admin2.jpg', absen: 0, berkas: [] },
+            { id: 8, name: 'Amir Aditia', role: 'Tenaga Administrasi & Yuridis', photo: 'admin3.jpg', absen: 0, berkas: [] },
+            { id: 9, name: 'Dian Diana', role: 'Tenaga Administrasi & Yuridis', photo: 'admin4.jpg', absen: 0, berkas: [] },
         ]
     },
     activities: [
