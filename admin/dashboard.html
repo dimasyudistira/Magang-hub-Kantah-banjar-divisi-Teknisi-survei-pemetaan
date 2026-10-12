@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin – Hub ATR/BPN Banjar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#1e40af', secondary: '#3b82f6' } } } }</script>
+    <style>
+        .sidebar-link.active { background: rgba(255,255,255,0.15); border-left: 3px solid white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .member-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-primary text-white flex flex-col min-h-screen fixed left-0 top-0 z-40">
+        <div class="p-6 border-b border-blue-700">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-map-location-dot text-primary text-lg"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-sm">Admin Panel</p>
+                    <p class="text-blue-200 text-xs">Hub ATR/BPN Banjar</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="flex-1 p-4 space-y-1 mt-2">
+            <a href="#" onclick="showTab('dashboard')" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-700 transition text-sm">
+                <i class="fa-solid fa-gauge w-4"></i> Dashboard
+            </a>
+            <a href="#" onclick="showTab('anggota')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-700 transition text-sm">
+                <i class="fa-solid fa-users w-4"></i> Kelola Anggota
+            </a>
+            <a href="#" onclick="showTab('aktivitas')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-700 transition text-sm">
+                <i class="fa-solid fa-camera w-4"></i> Kelola Aktivitas
+            </a>
+            <a href="#" onclick="showTab('tentang')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-700 transition text-sm">
+                <i class="fa-solid fa-circle-info w-4"></i> Tentang & Program
+            </a>
+            <a href="#" onclick="showTab('pengaturan')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-700 transition text-sm">
+                <i class="fa-solid fa-gear w-4"></i> Pengaturan
+            </a>
+        </nav>
+
+        <div class="p-4 border-t border-blue-700">
+            <div class="flex items-center gap-3 mb-3 px-2">
+                <div class="w-8 h-8 bg-blue-300 rounded-full flex items-center justify-center text-primary font-bold text-sm">A</div>
+                <div>
+                    <p class="text-sm font-semibold" id="admin-name">Admin</p>
+                    <p class="text-xs text-blue-300">Administrator</p>
+                </div>
+            </div>
+            <button onclick="logout()" class="w-full flex items-center gap-2 px-4 py-2 text-sm text-blue-200 hover:text-white hover:bg-blue-700 rounded-lg transition">
+                <i class="fa-solid fa-right-from-bracket"></i> Keluar
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 flex-1 p-8">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800" id="page-title">Dashboard</h1>
+                <p class="text-gray-500 text-sm" id="page-subtitle">Selamat datang di panel administrasi</p>
+            </div>
+            <a href="../index.html" target="_blank" class="flex items-center gap-2 bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-lg text-sm hover:shadow transition">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Website
+            </a>
+        </div>
+
+        <!-- ===== TAB: DASHBOARD ===== -->
+        <div id="tab-dashboard" class="tab-content active">
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-primary text-xl"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <p class="text-2xl font-bold text-gray-800" id="stat-anggota">9</p>
+                            <p class="text-gray-500 text-sm">Total Anggota</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl"><i class="fa-solid fa-camera"></i></div>
+                        <div>
+                            <p class="text-2xl font-bold text-gray-800" id="stat-aktivitas">15</p>
+                            <p class="text-gray-500 text-sm">Total Aktivitas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl"><i class="fa-solid fa-calendar-week"></i></div>
+                        <div>
+                            <p class="text-2xl font-bold text-gray-800" id="stat-minggu">3</p>
+                            <p class="text-gray-500 text-sm">Minggu Tercatat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-800 mb-4">Akses Cepat</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <button onclick="showTab('anggota')" class="flex items-center gap-3 p-4 border-2 border-dashed border-gray-200 rounded-xl hover:border-primary hover:bg-blue-50 transition text-left">
+                        <i class="fa-solid fa-user-plus text-primary text-xl"></i>
+                        <div>
+                            <p class="font-semibold text-gray-800 text-sm">Tambah Anggota</p>
+                            <p class="text-gray-400 text-xs">Kelola data peserta magang</p>
+                        </div>
+                    </button>
+                    <button onclick="showTab('aktivitas')" class="flex items-center gap-3 p-4 border-2 border-dashed border-gray-200 rounded-xl hover:border-primary hover:bg-blue-50 transition text-left">
+                        <i class="fa-solid fa-image text-green-600 text-xl"></i>
+                        <div>
+                            <p class="font-semibold text-gray-800 text-sm">Tambah Aktivitas</p>
+                            <p class="text-gray-400 text-xs">Dokumentasi kegiatan harian</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TAB: ANGGOTA ===== -->
+        <div id="tab-anggota" class="tab-content">
+            <div class="flex gap-4 mb-6">
+                <button onclick="showMemberSection('survei')" id="btn-survei" class="px-5 py-2 bg-primary text-white rounded-lg text-sm font-semibold">Teknis Survei Pemetaan</button>
+                <button onclick="showMemberSection('admin-div')" id="btn-admin-div" class="px-5 py-2 bg-white text-gray-600 border border-gray-200 rounded-lg text-sm font-semibold hover:bg-gray-50">Administrasi & Yuridis</button>
+            </div>
+
+            <!-- Survei Members -->
+            <div id="section-survei">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Tenaga Teknis Survei Pemetaan</h3>
+                        <button onclick="openMemberModal('survei')" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-blue-900 transition">
+                            <i class="fa-solid fa-plus"></i> Tambah Anggota
+                        </button>
+                    </div>
+                    <div id="survei-list" class="space-y-3"></div>
+                </div>
+            </div>
+
+            <!-- Admin Division Members -->
+            <div id="section-admin-div" class="hidden">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-gray-800">Tenaga Administrasi & Yuridis</h3>
+                        <button onclick="openMemberModal('administrasi')" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-blue-900 transition">
+                            <i class="fa-solid fa-plus"></i> Tambah Anggota
+                        </button>
+                    </div>
+                    <div id="admin-list" class="space-y-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TAB: AKTIVITAS ===== -->
+        <div id="tab-aktivitas" class="tab-content">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-gray-800">Kelola Aktivitas Harian</h3>
+                    <button onclick="openActivityModal()" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-blue-900 transition">
+                        <i class="fa-solid fa-plus"></i> Tambah Aktivitas
+                    </button>
+                </div>
+                <div id="activity-list" class="space-y-3"></div>
+            </div>
+        </div>
+
+        <!-- ===== TAB: TENTANG ===== -->
+        <div id="tab-tentang" class="tab-content">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+                <h3 class="font-bold text-gray-800 mb-4">Edit Tentang Kami & Program Kerja</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Umum</label>
+                        <textarea id="desc-umum" rows="4" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Teknis Survei</label>
+                        <textarea id="desc-survei" rows="4" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Administrasi</label>
+                        <textarea id="desc-admin" rows="4" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
+                    </div>
+                </div>
+                <button onclick="saveTentang()" class="mt-4 bg-primary text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-blue-900 transition">
+                    <i class="fa-solid fa-floppy-disk mr-2"></i>Simpan Perubahan
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== TAB: PENGATURAN ===== -->
+        <div id="tab-pengaturan" class="tab-content">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+                <h3 class="font-bold text-gray-800 mb-4">Ubah Password Admin</h3>
+                <div class="max-w-md space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Password Lama</label>
+                        <input type="password" id="old-pass" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="••••••••">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Password Baru</label>
+                        <input type="password" id="new-pass" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="••••••••">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Konfirmasi Password Baru</label>
+                        <input type="password" id="confirm-pass" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="••••••••">
+                    </div>
+                    <button onclick="changePassword()" class="bg-primary text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-blue-900 transition">
+                        Simpan Password
+                    </button>
+                    <div id="pass-msg" class="hidden text-sm"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== MODAL TAMBAH/EDIT ANGGOTA ===== -->
+    <div id="member-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-6">
+            <div class="flex items-center justify-between mb-5">
+                <h3 class="text-lg font-bold text-gray-800" id="modal-member-title">Tambah Anggota</h3>
+                <button onclick="closeMemberModal()" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <form id="member-form" class="space-y-4">
+                <input type="hidden" id="member-id">
+                <input type="hidden" id="member-division">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Lengkap</label>
+                    <input type="text" id="member-name" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Masukkan nama lengkap" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Posisi / Jabatan</label>
+                    <input type="text" id="member-role" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: Tenaga Teknis Survei Pemetaan">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Foto (nama file di folder images/)</label>
+                    <input type="text" id="member-photo" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: anggota1.jpg">
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button type="submit" class="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition text-sm">
+                        <i class="fa-solid fa-floppy-disk mr-2"></i> Simpan
+                    </button>
+                    <button type="button" onclick="closeMemberModal()" class="flex-1 bg-gray-100 text-gray-600 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-sm">Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== MODAL TAMBAH/EDIT AKTIVITAS ===== -->
+    <div id="activity-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-6">
+            <div class="flex items-center justify-between mb-5">
+                <h3 class="text-lg font-bold text-gray-800" id="modal-activity-title">Tambah Aktivitas</h3>
+                <button onclick="closeActivityModal()" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <form id="activity-form" class="space-y-4">
+                <input type="hidden" id="activity-id">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Minggu</label>
+                    <select id="activity-week" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option value="Minggu Pertama">Minggu Pertama</option>
+                        <option value="Minggu Kedua">Minggu Kedua</option>
+                        <option value="Minggu Ketiga">Minggu Ketiga</option>
+                        <option value="Minggu Keempat">Minggu Keempat</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Tanggal</label>
+                    <input type="date" id="activity-date" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Judul Kegiatan</label>
+                    <input type="text" id="activity-title" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Masukkan judul kegiatan" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Deskripsi</label>
+                    <textarea id="activity-desc" rows="3" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none" placeholder="Deskripsi singkat kegiatan"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Foto (nama file di folder images/)</label>
+                    <input type="text" id="activity-photo" class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: aktivitas1.jpg">
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button type="submit" class="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition text-sm">
+                        <i class="fa-solid fa-floppy-disk mr-2"></i> Simpan
+                    </button>
+                    <button type="button" onclick="closeActivityModal()" class="flex-1 bg-gray-100 text-gray-600 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-sm">Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed bottom-6 right-6 bg-gray-900 text-white px-5 py-3 rounded-xl text-sm flex items-center gap-2 z-50 shadow-lg">
+        <i class="fa-solid fa-circle-check text-green-400"></i>
+        <span id="toast-msg">Berhasil disimpan!</span>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
