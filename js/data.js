@@ -1,4 +1,9 @@
 // ============================================================
+// VERSI DATA – naikkan angka ini jika struktur data berubah
+// ============================================================
+const DATA_VERSION = 2;
+
+// ============================================================
 // DATA DEFAULT – digunakan jika belum ada data di localStorage
 // ============================================================
 
@@ -51,9 +56,14 @@ const DEFAULT_DATA = {
 
 function getData() {
     const raw = localStorage.getItem('ipmil_data');
-    if (!raw) {
-        localStorage.setItem('ipmil_data', JSON.stringify(DEFAULT_DATA));
-        return DEFAULT_DATA;
+    const ver = parseInt(localStorage.getItem('ipmil_data_version') || '0');
+
+    // Jika belum ada data ATAU versi lama → reset ke default
+    if (!raw || ver < DATA_VERSION) {
+        const fresh = JSON.parse(JSON.stringify(DEFAULT_DATA)); // deep copy
+        localStorage.setItem('ipmil_data', JSON.stringify(fresh));
+        localStorage.setItem('ipmil_data_version', String(DATA_VERSION));
+        return fresh;
     }
     return JSON.parse(raw);
 }

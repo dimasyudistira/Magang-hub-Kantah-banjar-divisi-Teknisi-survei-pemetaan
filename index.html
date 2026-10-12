@@ -422,41 +422,58 @@
             <!-- Divisi Survei -->
             <div>
                 <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center border-b pb-2">Tenaga Teknis Survei Pemetaan</h3>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 justify-center">
-                    <!-- Anggota 1 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/anggota1.jpg" alt="Linda Nurmaldita" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Linda Nurmaldita</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Teknis Survei Pemetaan</p>
-                    </div>
-                    <!-- Anggota 2 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/anggota2.jpg" alt="Dimas Yudhistira" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Dimas Yudhistira</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Teknis Survei Pemetaan</p>
-                    </div>
-                    <!-- Anggota 3 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/anggota3.jpg" alt="Sahidun Anwar" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Sahidun Anwar</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Teknis Survei Pemetaan</p>
-                    </div>
-                    <!-- Anggota 4 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/anggota4.jpg" alt="Woelandari" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Woelandari</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Teknis Survei Pemetaan</p>
-                    </div>
-                    <!-- Anggota 5 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/anggota5.jpg" alt="Sri Mulyati" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Sri Mulyati</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Teknis Survei Pemetaan</p>
-                    </div>
+                <div id="survei-members-front" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 justify-center">
+                    <!-- dirender oleh JS -->
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal Detail Anggota -->
+    <div id="member-detail-modal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4" onclick="closeMemberDetail(event)">
+        <div class="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <!-- Header Modal -->
+            <div class="bg-gradient-to-r from-primary to-secondary p-6 text-white relative">
+                <button onclick="document.getElementById('member-detail-modal').classList.add('hidden')"
+                    class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="flex items-center gap-4">
+                    <img id="md-photo" src="" alt="" class="w-20 h-20 rounded-full border-4 border-white object-cover shadow-lg">
+                    <div>
+                        <h3 id="md-name" class="text-xl font-bold"></h3>
+                        <p id="md-role" class="text-blue-200 text-sm"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 divide-x border-b">
+                <div class="p-4 text-center">
+                    <p class="text-3xl font-bold text-primary" id="md-berkas-count">0</p>
+                    <p class="text-gray-500 text-sm mt-1">Berkas Selesai</p>
+                </div>
+                <div class="p-4 text-center">
+                    <p class="text-3xl font-bold text-red-500" id="md-absen-count">0</p>
+                    <p class="text-gray-500 text-sm mt-1">Jumlah Absen</p>
+                </div>
+            </div>
+
+            <!-- Daftar Berkas -->
+            <div class="p-6">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-folder-open text-primary"></i> Daftar Berkas Selesai
+                </h4>
+                <div id="md-berkas-list" class="space-y-2 max-h-52 overflow-y-auto pr-1">
+                    <!-- dirender JS -->
+                </div>
+                <div id="md-empty" class="hidden text-center py-6 text-gray-400">
+                    <i class="fa-solid fa-folder-open text-3xl mb-2 block opacity-30"></i>
+                    <p class="text-sm">Belum ada berkas tercatat</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -496,5 +513,82 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+    // ── Render kartu anggota Survei dari localStorage ──
+    function renderSurveiMembers() {
+        const data = getData();
+        const container = document.getElementById('survei-members-front');
+        container.innerHTML = '';
+        (data.members.survei || []).forEach(m => {
+            const berkasCount = (m.berkas || []).length;
+            container.innerHTML += `
+            <div onclick="openMemberDetail(${m.id})"
+                class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100 cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all group">
+                <div class="relative inline-block">
+                    <img src="images/${m.photo}" alt="${m.name}"
+                        class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover"
+                        onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=1e40af&color=fff&size=128'">
+                    ${berkasCount > 0 ? `<span class="absolute top-1 right-1 w-6 h-6 bg-primary text-white rounded-full text-xs flex items-center justify-center font-bold shadow">${berkasCount}</span>` : ''}
+                </div>
+                <h3 class="text-base font-bold text-gray-800 group-hover:text-primary transition">${m.name}</h3>
+                <p class="text-secondary text-xs mb-2">${m.role}</p>
+                <div class="flex justify-center gap-3 mt-2">
+                    <span class="inline-flex items-center gap-1 bg-blue-50 text-primary text-xs px-2 py-1 rounded-full font-semibold">
+                        <i class="fa-solid fa-folder"></i> ${berkasCount} Berkas
+                    </span>
+                    ${m.absen > 0 ? `<span class="inline-flex items-center gap-1 bg-red-50 text-red-500 text-xs px-2 py-1 rounded-full font-semibold"><i class="fa-solid fa-calendar-xmark"></i> ${m.absen} Absen</span>` : ''}
+                </div>
+            </div>`;
+        });
+    }
+
+    // ── Buka modal detail anggota ──
+    function openMemberDetail(id) {
+        const data = getData();
+        const m = data.members.survei.find(x => x.id === id);
+        if (!m) return;
+
+        document.getElementById('md-photo').src = `images/${m.photo}`;
+        document.getElementById('md-photo').onerror = function() {
+            this.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=1e40af&color=fff&size=128`;
+        };
+        document.getElementById('md-name').textContent = m.name;
+        document.getElementById('md-role').textContent = m.role;
+        document.getElementById('md-berkas-count').textContent = (m.berkas || []).length;
+        document.getElementById('md-absen-count').textContent = m.absen || 0;
+
+        const list = document.getElementById('md-berkas-list');
+        const empty = document.getElementById('md-empty');
+        list.innerHTML = '';
+
+        if ((m.berkas || []).length === 0) {
+            empty.classList.remove('hidden');
+            list.classList.add('hidden');
+        } else {
+            empty.classList.add('hidden');
+            list.classList.remove('hidden');
+            m.berkas.forEach((b, i) => {
+                list.innerHTML += `
+                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <span class="w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">${i + 1}</span>
+                    <span class="font-mono text-sm text-gray-800 font-semibold">${b}</span>
+                    <i class="fa-solid fa-check-circle text-green-500 ml-auto"></i>
+                </div>`;
+            });
+        }
+
+        document.getElementById('member-detail-modal').classList.remove('hidden');
+    }
+
+    function closeMemberDetail(event) {
+        if (event.target === document.getElementById('member-detail-modal')) {
+            document.getElementById('member-detail-modal').classList.add('hidden');
+        }
+    }
+
+    // Inisialisasi
+    renderSurveiMembers();
+    </script>
 </body>
 </html>

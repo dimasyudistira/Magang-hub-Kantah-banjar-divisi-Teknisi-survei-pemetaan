@@ -324,6 +324,14 @@ function changePassword() {
     document.getElementById('confirm-pass').value = '';
 }
 
+function resetAllData() {
+    if (!confirm('Yakin ingin mereset semua data ke default? Perubahan yang belum disimpan akan hilang.')) return;
+    localStorage.removeItem('ipmil_data');
+    localStorage.removeItem('ipmil_data_version');
+    showToast('Data berhasil direset ke default!');
+    setTimeout(() => location.reload(), 1200);
+}
+
 // ---- LOGOUT ----
 function logout() {
     localStorage.removeItem('admin_logged_in');
