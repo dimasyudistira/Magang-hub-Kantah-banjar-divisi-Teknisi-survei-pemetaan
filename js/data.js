@@ -1,7 +1,7 @@
 // ============================================================
 // VERSI DATA – naikkan angka ini jika struktur data berubah
 // ============================================================
-const DATA_VERSION = 2;
+const DATA_VERSION = 3;
 
 // ============================================================
 // DATA DEFAULT – digunakan jika belum ada data di localStorage
@@ -11,7 +11,7 @@ const DEFAULT_DATA = {
     members: {
         survei: [
             { id: 1, name: 'Linda Nurmaldita', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota1.jpg', absen: 0, berkas: [] },
-            { id: 2, name: 'Dimas Yudhistira', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota2.jpg', absen: 0, berkas: ['SU_421_2013','SU_423_2013','SU_433_2008','SU_498_2008'] },
+            { id: 2, name: 'Dimas Yudhistira', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota2.jpg', absen: 0, berkas: ['SU_421_2013','SU_423_2013','SU_433_2008','SU_498_2008','194_2001','SU_004_1999','498_2014','SU_185_2001'] },
             { id: 3, name: 'Sahidun Anwar', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota3.jpg', absen: 0, berkas: [] },
             { id: 4, name: 'Woelandari', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota4.jpg', absen: 0, berkas: [] },
             { id: 5, name: 'Sri Mulyati', role: 'Tenaga Teknis Survei Pemetaan', photo: 'anggota5.jpg', absen: 0, berkas: [] },
