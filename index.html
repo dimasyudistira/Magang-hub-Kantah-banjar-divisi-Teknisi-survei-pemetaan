@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peserta Magang Hub ATR/BPN Banjar</title>
-    <!-- Tailwind CSS -->
+    <title>Laporan Magang – Dimas Yudhistira | ATR/BPN Banjar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e40af', // Blue 800
-                        secondary: '#3b82f6', // Blue 500
+                        primary: '#1e40af',
+                        secondary: '#3b82f6',
                     }
                 }
             }
@@ -30,15 +28,15 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="#" class="text-xl font-bold text-primary flex items-center gap-2">
-                        <i class="fa-solid fa-map-location-dot"></i> Hub ATR/BPN Banjar
+                        <i class="fa-solid fa-map-location-dot"></i> Dimas Yudhistira
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#beranda" class="text-gray-600 hover:text-primary transition">Beranda</a>
-                    <a href="#tentang" class="text-gray-600 hover:text-primary transition">Tentang Kami</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-primary transition">Tentang</a>
                     <a href="#program" class="text-gray-600 hover:text-primary transition">Program Kerja</a>
                     <a href="#aktivitas" class="text-gray-600 hover:text-primary transition">Aktivitas</a>
-                    <a href="#anggota" class="text-gray-600 hover:text-primary transition">Anggota</a>
+                    <a href="#berkas" class="text-gray-600 hover:text-primary transition">Berkas</a>
                     <a href="laporan.html" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-900 transition flex items-center gap-1">
                         <i class="fa-solid fa-file-lines"></i> Laporan
                     </a>
@@ -55,10 +53,10 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#beranda" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Beranda</a>
-                <a href="#tentang" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Tentang Kami</a>
+                <a href="#tentang" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Tentang</a>
                 <a href="#program" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Program Kerja</a>
                 <a href="#aktivitas" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Aktivitas</a>
-                <a href="#anggota" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Anggota</a>
+                <a href="#berkas" class="block px-3 py-2 text-gray-600 hover:text-primary font-medium">Berkas</a>
                 <a href="laporan.html" class="block px-3 py-2 text-primary font-semibold"><i class="fa-solid fa-file-lines mr-1"></i> Laporan</a>
             </div>
         </div>
@@ -66,51 +64,105 @@
 
     <!-- Hero Section -->
     <section id="beranda" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-gradient-to-br from-primary to-secondary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Peserta Magang Hub ATR/BPN Banjar</h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                Membangun pengalaman, mengembangkan keterampilan, dan berkontribusi dalam pemetaan serta survei lapangan secara profesional.
-            </p>
-            <a href="#tentang" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg inline-block">
-                Pelajari Lebih Lanjut
-            </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <!-- Foto -->
+                <div class="shrink-0">
+                    <img src="images/anggota2.jpg" alt="Dimas Yudhistira"
+                        class="w-40 h-40 md:w-52 md:h-52 rounded-full border-4 border-white shadow-2xl object-cover"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Dimas+Yudhistira&background=1e3a8a&color=fff&size=200'">
+                </div>
+                <!-- Teks -->
+                <div class="text-center md:text-left">
+                    <p class="text-blue-200 font-semibold mb-1 tracking-wide uppercase text-sm">Laporan Magang</p>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-3">Dimas Yudhistira</h1>
+                    <p class="text-blue-100 text-lg mb-2 font-medium">Tenaga Teknis Survei Pemetaan</p>
+                    <p class="text-blue-200 text-sm mb-6">Kantor Pertanahan Kota Banjar &mdash; ATR/BPN</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <a href="#aktivitas" class="bg-white text-primary px-6 py-2.5 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg text-sm">
+                            <i class="fa-solid fa-calendar-days mr-1"></i> Lihat Aktivitas
+                        </a>
+                        <a href="#berkas" class="border-2 border-white text-white px-6 py-2.5 rounded-full font-semibold hover:bg-white/20 transition text-sm">
+                            <i class="fa-solid fa-folder-open mr-1"></i> Berkas Selesai
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="mt-12 grid grid-cols-3 gap-4 max-w-xl mx-auto md:mx-0">
+                <div class="bg-white/15 rounded-xl p-4 text-center backdrop-blur-sm">
+                    <p class="text-3xl font-bold" id="stat-berkas">4</p>
+                    <p class="text-blue-200 text-xs mt-1">Berkas Selesai</p>
+                </div>
+                <div class="bg-white/15 rounded-xl p-4 text-center backdrop-blur-sm">
+                    <p class="text-3xl font-bold">3</p>
+                    <p class="text-blue-200 text-xs mt-1">Minggu Aktif</p>
+                </div>
+                <div class="bg-white/15 rounded-xl p-4 text-center backdrop-blur-sm">
+                    <p class="text-3xl font-bold" id="stat-absen">0</p>
+                    <p class="text-blue-200 text-xs mt-1">Jumlah Absen</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Tentang Kami -->
+    <!-- Tentang -->
     <section id="tentang" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-primary mb-2">Tentang Kami</h2>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-primary mb-2">Tentang Saya</h2>
                 <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
-                <p class="mt-4 text-gray-600 max-w-3xl mx-auto">Kami adalah peserta magang di Hub ATR/BPN Banjar yang berdedikasi tinggi untuk mempelajari dan mengaplikasikan teori akademik ke dalam praktik nyata di lapangan.</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Tentang Administrasi -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
-                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-file-signature"></i> Tenaga Administrasi & Yuridis
-                    </h3>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
                     <p class="text-gray-600 leading-relaxed mb-4">
-                        Berfokus pada pengelolaan dokumen pertanahan, verifikasi data yuridis, dan pelayanan administrasi pertanahan untuk memastikan tertib hukum dan kepastian hak atas tanah bagi masyarakat.
+                        Saya adalah mahasiswa yang sedang melaksanakan kegiatan magang di <strong>Kantor Pertanahan Kota Banjar</strong>, di bawah naungan Kementerian ATR/BPN. Selama magang, saya ditempatkan di <strong>Bidang Tenaga Teknis Survei Pemetaan</strong>.
                     </p>
-                    <ul class="space-y-2 text-gray-700 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-secondary"></i> Pengelolaan Dokumen</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-secondary"></i> Pelayanan Administrasi</li>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Kegiatan magang ini bertujuan untuk mengaplikasikan ilmu yang diperoleh di bangku perkuliahan ke dalam praktik nyata di lapangan, khususnya dalam bidang survei, pemetaan, dan digitalisasi data pertanahan.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-blue-100 text-primary rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-building-columns"></i></span>
+                            <span><strong>Instansi:</strong> Kantor Pertanahan Kota Banjar</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-blue-100 text-primary rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-satellite-dish"></i></span>
+                            <span><strong>Bidang:</strong> Tenaga Teknis Survei Pemetaan</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-blue-100 text-primary rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-calendar-range"></i></span>
+                            <span><strong>Periode:</strong> September – Oktober 2026</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 bg-blue-100 text-primary rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></span>
+                            <span><strong>Lokasi:</strong> Kota Banjar, Jawa Barat</span>
+                        </li>
                     </ul>
                 </div>
-                <!-- Tentang Survei -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
-                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-satellite-dish"></i> Tenaga Teknis Survei Pemetaan
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+                    <h3 class="font-bold text-primary text-lg mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-star"></i> Keahlian yang Dipelajari
                     </h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        Mempelajari penggunaan alat-alat survei terkini, analisis data spasial, hingga pembuatan peta digital yang akurat untuk mendukung pemetaan dan perencanaan wilayah yang presisi.
-                    </p>
-                    <ul class="space-y-2 text-gray-700 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-secondary"></i> Pengukuran Lapangan</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-secondary"></i> Analisis Data Spasial</li>
-                    </ul>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">AutoCAD Pemetaan</span><span class="text-primary font-semibold">80%</span></div>
+                            <div class="h-2 bg-white rounded-full overflow-hidden"><div class="h-2 bg-primary rounded-full" style="width:80%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Digitasi & Plotting</span><span class="text-primary font-semibold">85%</span></div>
+                            <div class="h-2 bg-white rounded-full overflow-hidden"><div class="h-2 bg-primary rounded-full" style="width:85%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Survei Lapangan</span><span class="text-primary font-semibold">75%</span></div>
+                            <div class="h-2 bg-white rounded-full overflow-hidden"><div class="h-2 bg-secondary rounded-full" style="width:75%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Analisis Data Spasial</span><span class="text-primary font-semibold">70%</span></div>
+                            <div class="h-2 bg-white rounded-full overflow-hidden"><div class="h-2 bg-secondary rounded-full" style="width:70%"></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,51 +170,47 @@
 
     <!-- Program Kerja -->
     <section id="program" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-primary mb-2">Program Kerja</h2>
                 <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600">Program kegiatan selama magang di Bidang Teknis Survei Pemetaan</p>
             </div>
-            
-            <!-- Program Administrasi -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold text-gray-700 mb-6 border-l-4 border-primary pl-4">Program Administrasi & Yuridis</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-gray-100">
-                        <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-folder-open"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Manajemen Berkas Pertanahan</h3>
-                        <p class="text-gray-600 text-sm">Penataan dan pengelolaan dokumen fisik maupun digital untuk kemudahan akses dan keamanan arsip negara.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-desktop"></i>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-gray-100">
-                        <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Verifikasi Yuridis</h3>
-                        <p class="text-gray-600 text-sm">Pemeriksaan dan validasi kesesuaian data hukum pertanahan berdasarkan undang-undang yang berlaku.</p>
-                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Instalasi & Belajar AutoCAD</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Orientasi dan melakukan instalasi AutoCAD, kemudian mempelajari penggunaannya untuk keperluan pemetaan bidang tanah.</p>
                 </div>
-            </div>
-
-            <!-- Program Survei -->
-            <div>
-                <h3 class="text-2xl font-semibold text-gray-700 mb-6 border-l-4 border-secondary pl-4">Program Teknis Survei Pemetaan</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-gray-100">
-                        <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Pengukuran Bidang Tanah</h3>
-                        <p class="text-gray-600 text-sm">Pengambilan data lapangan menggunakan instrumen pengukur presisi tinggi untuk batas kepemilikan lahan.</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-folder-tree"></i>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-gray-100">
-                        <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-layer-group"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Pengolahan Data Spasial</h3>
-                        <p class="text-gray-600 text-sm">Digitalisasi dan pengolahan hasil survei menjadi peta pendaftaran dan peta tematik melalui perangkat lunak pemetaan.</p>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Sortir Dokumen Purwaharja</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Menyortir dokumen Kelurahan Purwaharja dan melakukan kunjungan ke kantor kelurahan untuk sosialisasi bidang tanah yang belum terpetakan.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-scanner-image"></i>
                     </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Digitalisasi Dokumen (Scan)</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Melakukan scan terhadap dokumen-dokumen pertanahan fisik untuk didigitalisasikan ke dalam sistem pengarsipan digital.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Digitasi & Plotting Peta</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Melakukan digitasi dan plotting Kelurahan Purwaharja dan Desa Karyamukti menggunakan perangkat lunak pemetaan.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 md:col-span-2">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-person-hiking"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Survei Lapangan Kecamatan Situ Batu</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Melakukan survei lapangan ke Kecamatan Situ Batu bersama Bapak Ganda untuk verifikasi dan pengambilan data bidang tanah secara langsung.</p>
                 </div>
             </div>
         </div>
@@ -174,71 +222,56 @@
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-primary mb-2">Aktivitas Harian</h2>
                 <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
-                <p class="mt-4 text-gray-600">Dokumentasi kegiatan dan rutinitas kami selama magang.</p>
+                <p class="mt-4 text-gray-600">Dokumentasi kegiatan selama magang di ATR/BPN Banjar</p>
             </div>
-            
+
             <!-- Minggu Pertama -->
             <div class="mb-12">
                 <h3 class="text-2xl font-semibold text-gray-700 mb-6 border-l-4 border-primary pl-4">Minggu Pertama</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    
-                    <!-- Aktivitas 1 -->
+
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/aktivitas1.jpg" alt="Pengenalan Lingkungan ATR/BPN" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> [Hari, Tanggal]</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Pengenalan Lingkungan ATR/BPN</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Kegiatan pengarahan dan pengenalan lingkungan kerja di kantor ATR/BPN Banjar bersama seluruh rekan magang dan pembimbing. Melalui kegiatan ini, kami mempelajari struktur organisasi dan pembagian tugas masing-masing divisi.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Kegiatan pengarahan dan pengenalan lingkungan kerja di kantor ATR/BPN Banjar bersama seluruh rekan magang dan pembimbing. Mempelajari struktur organisasi dan pembagian tugas masing-masing divisi.</p>
                         </div>
                     </div>
 
-                    <!-- Aktivitas 2 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
-                        <img src="images/aktivitas2.jpg" alt="Kegiatan Day 2" class="w-full h-64 object-cover">
+                        <img src="images/aktivitas2.jpg" alt="Instalasi AutoCAD" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> [Hari, Tanggal]</p>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Kegiatan Day 2</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Aktivitas di hari kedua magang, berkumpul dan berdiskusi bersama teman-teman divisi Tenaga Teknis Survei Pemetaan. Semangat baru untuk mempelajari teknis lapangan!
-                            </p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Instalasi & Belajar AutoCAD</h3>
+                            <p class="text-gray-600 leading-relaxed">Melakukan instalasi AutoCAD di komputer kantor, kemudian mulai mempelajari dasar-dasar penggunaan AutoCAD untuk keperluan pemetaan bidang tanah.</p>
                         </div>
                     </div>
 
-                    <!-- Aktivitas 3 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/aktivitas3.jpg" alt="Latihan Upacara ATR/BPN" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> [Hari, Tanggal]</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Latihan Upacara ATR/BPN</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Persiapan dan latihan upacara di lapangan kantor ATR/BPN untuk memperingati perayaan dan menanamkan kedisiplinan.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Persiapan dan latihan upacara di lapangan kantor ATR/BPN untuk memperingati perayaan dan menanamkan kedisiplinan.</p>
                         </div>
                     </div>
 
-                    <!-- Aktivitas 4 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/aktivitas4.jpg" alt="Ulang Tahun Kantor ATR/BPN" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> [Hari, Tanggal]</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Ulang Tahun Kantor ATR/BPN</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Perayaan ulang tahun kantor ATR/BPN Kota Banjar yang turut dihadiri oleh Walikota Ciamis beserta jajaran FORKOMPIMDA.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Perayaan ulang tahun kantor ATR/BPN Kota Banjar yang turut dihadiri oleh Walikota Ciamis beserta jajaran FORKOMPIMDA.</p>
                         </div>
                     </div>
-                    
-                    <!-- Aktivitas 5 -->
+
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
-                        <img src="images/aktivitas5.jpg" alt="Kegiatan Day 5" class="w-full h-64 object-cover">
+                        <img src="images/aktivitas5.jpg" alt="Sortir Dokumen Purwaharja" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> [Hari, Tanggal]</p>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Kegiatan Day 5</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Aktivitas di hari kelima magang. Semangat kebersamaan dan kekompakan tim dalam menyelesaikan tugas-tugas di kantor.
-                            </p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Sortir Dokumen Purwaharja</h3>
+                            <p class="text-gray-600 leading-relaxed">Menyortir dan mengklasifikasikan dokumen Kelurahan Purwaharja sebagai persiapan kegiatan sosialisasi dan pemetaan bidang tanah yang belum terdaftar.</p>
                         </div>
                     </div>
                 </div>
@@ -249,63 +282,48 @@
                 <h3 class="text-2xl font-semibold text-gray-700 mb-6 border-l-4 border-secondary pl-4">Minggu Kedua</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-                    <!-- Minggu2 - Foto 1 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_1.jpg" alt="Digitalisasi Wilayah Purwaharja" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Senin, 28 September 2026</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Digitalisasi Wilayah Purwaharja</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Kegiatan digitalisasi bidang tanah di wilayah Purwaharja. Tim turun langsung ke lokasi untuk mengumpulkan data spasial yang akurat sebagai bagian dari program pemetaan.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Kegiatan digitalisasi bidang tanah di wilayah Purwaharja. Turun langsung ke lokasi untuk mengumpulkan data spasial yang akurat sebagai bagian dari program pemetaan.</p>
                         </div>
                     </div>
 
-                    <!-- Minggu2 - Foto 2 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_2.jpg" alt="Apel Pagi ATR/BPN" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Selasa, 29 September 2026</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Apel Pagi ATR/BPN</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Pelaksanaan apel pagi rutin bersama seluruh pegawai kantor ATR/BPN Kota Banjar sebagai bagian dari disiplin kerja harian.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Pelaksanaan apel pagi rutin bersama seluruh pegawai kantor ATR/BPN Kota Banjar sebagai bagian dari disiplin kerja harian.</p>
                         </div>
                     </div>
 
-                    <!-- Minggu2 - Foto 3 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_3.jpg" alt="Upacara 66 Tahun UUPA" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Rabu, 30 September 2026</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Upacara 66 Tahun UUPA</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Upacara peringatan 66 Tahun Undang-Undang Pokok Agraria (UUPA) yang diselenggarakan di lapangan kantor ATR/BPN Kota Banjar.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Upacara peringatan 66 Tahun Undang-Undang Pokok Agraria (UUPA) yang diselenggarakan di lapangan kantor ATR/BPN Kota Banjar.</p>
                         </div>
                     </div>
 
-                    <!-- Minggu2 - Foto 4 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_4.jpg" alt="Apel Bersama Pegawai" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Kamis, 1 Oktober 2026</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Apel Bersama Pegawai</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Apel bersama seluruh pegawai dan peserta magang di halaman kantor ATR/BPN untuk memperkuat rasa kebersamaan dan profesionalisme.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Apel bersama seluruh pegawai dan peserta magang di halaman kantor ATR/BPN untuk memperkuat rasa kebersamaan dan profesionalisme.</p>
                         </div>
                     </div>
 
-                    <!-- Minggu2 - Foto 5 -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_5.jpg" alt="Apel Pakaian Batik" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Jumat, 2 Oktober 2026</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Apel dengan Pakaian Batik</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Apel harian dengan mengenakan pakaian batik sebagai bentuk penghargaan terhadap budaya Indonesia di lingkungan kantor ATR/BPN.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Apel harian dengan mengenakan pakaian batik sebagai bentuk penghargaan terhadap budaya Indonesia di lingkungan kantor ATR/BPN.</p>
                         </div>
                     </div>
                 </div>
@@ -316,63 +334,48 @@
                 <h3 class="text-2xl font-semibold text-gray-700 mb-6 border-l-4 border-primary pl-4">Minggu Ketiga</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-                    <!-- Senin 5 Oktober -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
-                        <img src="images/minggu3_1.jpg" alt="Survei Bersama Warga" class="w-full h-64 object-cover">
+                        <img src="images/minggu3_1.jpg" alt="Survei & Verifikasi Batas Tanah" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Senin, 5 Oktober 2026</p>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Survei & Verifikasi Batas Tanah</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Tim ATR/BPN turun langsung ke lapangan bersama warga untuk memverifikasi dan mengklarifikasi batas-batas bidang tanah yang akan didigitalisasi.
-                            </p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Survei &amp; Verifikasi Batas Tanah</h3>
+                            <p class="text-gray-600 leading-relaxed">Tim ATR/BPN turun langsung ke lapangan bersama warga untuk memverifikasi dan mengklarifikasi batas-batas bidang tanah yang akan didigitalisasi.</p>
                         </div>
                     </div>
 
-                    <!-- Selasa 6 Oktober -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_2.jpg" alt="Apel & Pengolahan Data" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Selasa, 6 Oktober 2026</p>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Apel Pagi & Pengolahan Data</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Apel pagi rutin dilanjutkan dengan pengolahan data hasil survei lapangan menggunakan perangkat lunak pemetaan di kantor ATR/BPN.
-                            </p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Apel Pagi &amp; Pengolahan Data</h3>
+                            <p class="text-gray-600 leading-relaxed">Apel pagi rutin dilanjutkan dengan pengolahan data hasil survei lapangan menggunakan perangkat lunak pemetaan di kantor ATR/BPN.</p>
                         </div>
                     </div>
 
-                    <!-- Rabu 7 Oktober -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_5.jpg" alt="Apel & Digitasi" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Rabu, 7 Oktober 2026</p>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Apel & Digitasi Peta</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Apel pagi bersama pegawai dilanjutkan dengan kegiatan digitasi dan plotting peta bidang tanah wilayah Purwaharja menggunakan AutoCAD.
-                            </p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Apel &amp; Digitasi Peta</h3>
+                            <p class="text-gray-600 leading-relaxed">Apel pagi bersama pegawai dilanjutkan dengan kegiatan digitasi dan plotting peta bidang tanah wilayah Purwaharja menggunakan AutoCAD.</p>
                         </div>
                     </div>
 
-                    <!-- Kamis 8 Oktober -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu3_4.jpg" alt="Inspeksi Lapangan Jalan AMD" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Kamis, 8 Oktober 2026</p>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Inspeksi Lapangan – Jalan AMD</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Inspeksi dan verifikasi bidang tanah di Jalan AMD, Kota Banjar bersama pejabat ATR/BPN untuk memastikan kesesuaian data dengan kondisi nyata di lapangan.
-                            </p>
+                            <p class="text-gray-600 leading-relaxed">Inspeksi dan verifikasi bidang tanah di Jalan AMD, Kota Banjar bersama pejabat ATR/BPN untuk memastikan kesesuaian data dengan kondisi nyata di lapangan.</p>
                         </div>
                     </div>
 
-                    <!-- Jumat 9 Oktober -->
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 transition hover:shadow-md flex flex-col">
                         <img src="images/minggu2_4.jpg" alt="Evaluasi Mingguan" class="w-full h-64 object-cover">
                         <div class="p-6 flex-grow">
                             <p class="text-xs text-primary font-semibold mb-2"><i class="fa-regular fa-calendar"></i> Jumat, 9 Oktober 2026</p>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Apel & Evaluasi Mingguan</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Apel akhir pekan bersama seluruh pegawai dan peserta magang, dilanjutkan dengan evaluasi progress kegiatan minggu ketiga dan penyusunan rencana kerja selanjutnya.
-                            </p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Apel &amp; Evaluasi Mingguan</h3>
+                            <p class="text-gray-600 leading-relaxed">Apel akhir pekan bersama seluruh pegawai dan peserta magang, dilanjutkan dengan evaluasi progress kegiatan minggu ketiga dan penyusunan rencana kerja selanjutnya.</p>
                         </div>
                     </div>
                 </div>
@@ -380,132 +383,67 @@
         </div>
     </section>
 
-    <!-- Susunan Anggota Magang -->
-    <section id="anggota" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-primary mb-2">Susunan Anggota Magang</h2>
+    <!-- Berkas Selesai -->
+    <section id="berkas" class="py-16 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-primary mb-2">Berkas Selesai</h2>
                 <div class="w-16 h-1 bg-secondary mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600">Daftar berkas pekerjaan yang telah diselesaikan selama magang</p>
             </div>
-            
-            <!-- Divisi Administrasi -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center border-b pb-2">Tenaga Administrasi & Yuridis Pertanahan</h3>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
-                    <!-- Admin 1 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/admin1.jpg" alt="Novia Eliza" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Novia Eliza</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Administrasi</p>
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                <!-- Header -->
+                <div class="flex items-center gap-4 mb-6 pb-6 border-b">
+                    <img src="images/anggota2.jpg" alt="Dimas Yudhistira"
+                        class="w-16 h-16 rounded-full border-4 border-blue-100 object-cover shadow"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Dimas+Yudhistira&background=1e40af&color=fff&size=64'">
+                    <div>
+                        <h3 class="font-bold text-gray-800 text-lg">Dimas Yudhistira</h3>
+                        <p class="text-secondary text-sm">Tenaga Teknis Survei Pemetaan</p>
                     </div>
-                    <!-- Admin 2 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/admin2.jpg" alt="Rayhan Arasy" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Rayhan Arasy</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Administrasi</p>
-                    </div>
-                    <!-- Admin 3 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/admin3.jpg" alt="Amir Aditia" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Amir Aditia</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Administrasi</p>
-                    </div>
-                    <!-- Admin 4 -->
-                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100">
-                        <img src="images/admin4.jpg" alt="Dian Diana" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover">
-                        <h3 class="text-lg font-bold text-gray-800">Dian Diana</h3>
-                        <p class="text-secondary text-sm mb-3">Tenaga Administrasi</p>
+                    <div class="ml-auto text-center">
+                        <p class="text-3xl font-bold text-primary" id="berkas-count-section">–</p>
+                        <p class="text-gray-400 text-xs">Total Berkas</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Divisi Survei -->
-            <div>
-                <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center border-b pb-2">Tenaga Teknis Survei Pemetaan</h3>
-                <div id="survei-members-front" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 justify-center">
-                    <!-- dirender oleh JS -->
+                <!-- List -->
+                <div id="berkas-list-section" class="space-y-3">
+                    <p class="text-gray-400 text-center py-4 text-sm">Memuat data...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal Detail Anggota -->
-    <div id="member-detail-modal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4" onclick="closeMemberDetail(event)">
-        <div class="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-            <!-- Header Modal -->
-            <div class="bg-gradient-to-r from-primary to-secondary p-6 text-white relative">
-                <button onclick="document.getElementById('member-detail-modal').classList.add('hidden')"
-                    class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/40 transition">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <div class="flex items-center gap-4">
-                    <img id="md-photo" src="" alt="" class="w-20 h-20 rounded-full border-4 border-white object-cover shadow-lg">
-                    <div>
-                        <h3 id="md-name" class="text-xl font-bold"></h3>
-                        <p id="md-role" class="text-blue-200 text-sm"></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-2 divide-x border-b">
-                <div class="p-4 text-center">
-                    <p class="text-3xl font-bold text-primary" id="md-berkas-count">0</p>
-                    <p class="text-gray-500 text-sm mt-1">Berkas Selesai</p>
-                </div>
-                <div class="p-4 text-center">
-                    <p class="text-3xl font-bold text-red-500" id="md-absen-count">0</p>
-                    <p class="text-gray-500 text-sm mt-1">Jumlah Absen</p>
-                </div>
-            </div>
-
-            <!-- Daftar Berkas -->
-            <div class="p-6">
-                <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-folder-open text-primary"></i> Daftar Berkas Selesai
-                </h4>
-                <div id="md-berkas-list" class="space-y-2 max-h-52 overflow-y-auto pr-1">
-                    <!-- dirender JS -->
-                </div>
-                <div id="md-empty" class="hidden text-center py-6 text-gray-400">
-                    <i class="fa-solid fa-folder-open text-3xl mb-2 block opacity-30"></i>
-                    <p class="text-sm">Belum ada berkas tercatat</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
             <div>
-                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-map-location-dot"></i> Hub ATR/BPN Banjar
+                <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-map-location-dot"></i> Dimas Yudhistira
                 </h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Wadah berkumpul dan belajar bagi para peserta magang Hub ATR/BPN Banjar.
-                </p>
+                <p class="text-gray-400 text-sm leading-relaxed">Laporan kegiatan magang di Kantor Pertanahan Kota Banjar – ATR/BPN.</p>
             </div>
             <div>
-                <h3 class="text-lg font-bold mb-4">Tautan Cepat</h3>
+                <h3 class="text-lg font-bold mb-3">Tautan Cepat</h3>
                 <ul class="space-y-2 text-gray-400 text-sm">
                     <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
-                    <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="#tentang" class="hover:text-white transition">Tentang</a></li>
                     <li><a href="#program" class="hover:text-white transition">Program Kerja</a></li>
-                    <li><a href="#anggota" class="hover:text-white transition">Anggota</a></li>
+                    <li><a href="#aktivitas" class="hover:text-white transition">Aktivitas</a></li>
+                    <li><a href="#berkas" class="hover:text-white transition">Berkas</a></li>
                 </ul>
             </div>
             <div>
-                <h3 class="text-lg font-bold mb-4">Kontak</h3>
+                <h3 class="text-lg font-bold mb-3">Lokasi Magang</h3>
                 <ul class="space-y-2 text-gray-400 text-sm">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope"></i> magang.bpnbanjar@example.com</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> +62 812 3456 7890</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Jl. Pertanahan No. 123, Kota Banjar</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Kantor Pertanahan Kota Banjar</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Kota Banjar, Jawa Barat</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-calendar"></i> September – Oktober 2026</li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm flex flex-col sm:flex-row items-center justify-between gap-2">
-            <span>&copy; 2026 Peserta Magang Hub ATR/BPN Banjar. Dibuat dengan antusiasme.</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm flex flex-col sm:flex-row items-center justify-between gap-2">
+            <span>&copy; 2026 Dimas Yudhistira – Magang Hub ATR/BPN Banjar.</span>
             <a href="admin/login.html" class="text-gray-600 hover:text-gray-400 transition flex items-center gap-1 text-xs">
                 <i class="fa-solid fa-lock"></i> Admin
             </a>
@@ -515,80 +453,45 @@
     <script src="script.js"></script>
     <script src="js/data.js"></script>
     <script>
-    // ── Render kartu anggota Survei dari localStorage ──
-    function renderSurveiMembers() {
+    // ── Load data Dimas dari localStorage ──
+    function loadDimasData() {
         const data = getData();
-        const container = document.getElementById('survei-members-front');
-        container.innerHTML = '';
-        (data.members.survei || []).forEach(m => {
-            const berkasCount = (m.berkas || []).length;
-            container.innerHTML += `
-            <div onclick="openMemberDetail(${m.id})"
-                class="bg-gray-50 rounded-lg overflow-hidden shadow-sm text-center p-6 border border-gray-100 cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all group">
-                <div class="relative inline-block">
-                    <img src="images/${m.photo}" alt="${m.name}"
-                        class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow object-cover"
-                        onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=1e40af&color=fff&size=128'">
-                    ${berkasCount > 0 ? `<span class="absolute top-1 right-1 w-6 h-6 bg-primary text-white rounded-full text-xs flex items-center justify-center font-bold shadow">${berkasCount}</span>` : ''}
-                </div>
-                <h3 class="text-base font-bold text-gray-800 group-hover:text-primary transition">${m.name}</h3>
-                <p class="text-secondary text-xs mb-2">${m.role}</p>
-                <div class="flex justify-center gap-3 mt-2">
-                    <span class="inline-flex items-center gap-1 bg-blue-50 text-primary text-xs px-2 py-1 rounded-full font-semibold">
-                        <i class="fa-solid fa-folder"></i> ${berkasCount} Berkas
-                    </span>
-                    ${m.absen > 0 ? `<span class="inline-flex items-center gap-1 bg-red-50 text-red-500 text-xs px-2 py-1 rounded-full font-semibold"><i class="fa-solid fa-calendar-xmark"></i> ${m.absen} Absen</span>` : ''}
-                </div>
+        const dimas = (data.members.survei || []).find(m => m.name && m.name.toLowerCase().includes('dimas'));
+        if (!dimas) return;
+
+        // Update stats di hero
+        const berkasCount = (dimas.berkas || []).length;
+        const statBerkas = document.getElementById('stat-berkas');
+        const statAbsen = document.getElementById('stat-absen');
+        if (statBerkas) statBerkas.textContent = berkasCount;
+        if (statAbsen) statAbsen.textContent = dimas.absen || 0;
+
+        // Update berkas count di section berkas
+        const berkasCountSec = document.getElementById('berkas-count-section');
+        if (berkasCountSec) berkasCountSec.textContent = berkasCount;
+
+        // Render daftar berkas
+        const list = document.getElementById('berkas-list-section');
+        if (!list) return;
+        list.innerHTML = '';
+
+        if (berkasCount === 0) {
+            list.innerHTML = '<p class="text-gray-400 text-center py-6 text-sm"><i class="fa-solid fa-folder-open text-3xl mb-2 block opacity-30"></i>Belum ada berkas tercatat</p>';
+            return;
+        }
+
+        dimas.berkas.forEach((b, i) => {
+            list.innerHTML += `
+            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50 transition">
+                <span class="w-9 h-9 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">${i + 1}</span>
+                <span class="font-mono font-bold text-gray-800 flex-1">${b}</span>
+                <span class="flex items-center gap-1 text-green-600 text-sm font-semibold"><i class="fa-solid fa-circle-check"></i> Selesai</span>
             </div>`;
         });
     }
 
-    // ── Buka modal detail anggota ──
-    function openMemberDetail(id) {
-        const data = getData();
-        const m = data.members.survei.find(x => x.id === id);
-        if (!m) return;
-
-        document.getElementById('md-photo').src = `images/${m.photo}`;
-        document.getElementById('md-photo').onerror = function() {
-            this.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=1e40af&color=fff&size=128`;
-        };
-        document.getElementById('md-name').textContent = m.name;
-        document.getElementById('md-role').textContent = m.role;
-        document.getElementById('md-berkas-count').textContent = (m.berkas || []).length;
-        document.getElementById('md-absen-count').textContent = m.absen || 0;
-
-        const list = document.getElementById('md-berkas-list');
-        const empty = document.getElementById('md-empty');
-        list.innerHTML = '';
-
-        if ((m.berkas || []).length === 0) {
-            empty.classList.remove('hidden');
-            list.classList.add('hidden');
-        } else {
-            empty.classList.add('hidden');
-            list.classList.remove('hidden');
-            m.berkas.forEach((b, i) => {
-                list.innerHTML += `
-                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                    <span class="w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">${i + 1}</span>
-                    <span class="font-mono text-sm text-gray-800 font-semibold">${b}</span>
-                    <i class="fa-solid fa-check-circle text-green-500 ml-auto"></i>
-                </div>`;
-            });
-        }
-
-        document.getElementById('member-detail-modal').classList.remove('hidden');
-    }
-
-    function closeMemberDetail(event) {
-        if (event.target === document.getElementById('member-detail-modal')) {
-            document.getElementById('member-detail-modal').classList.add('hidden');
-        }
-    }
-
-    // Inisialisasi
-    renderSurveiMembers();
+    loadDimasData();
     </script>
+
 </body>
 </html>
